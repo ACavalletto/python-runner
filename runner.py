@@ -8,8 +8,11 @@ screen = pygame.display.set_mode((800, 400))
 pygame.display.set_caption('Runner') 
 clock = pygame.time.Clock()
 
-test_surface = pygame.Surface((100,200))
-test_surface.fill('Red')
+# import sky.png as a surface object
+sky_surface = pygame.image.load('graphics/sky.png') 
+
+ground_surface = pygame.image.load('graphics/ground.png')
+
 
 while True:
     # gets all events and loops through them
@@ -18,7 +21,9 @@ while True:
             pygame.quit()
             exit() # exits while loop
     
-    screen.blit(test_surface, (200,100))
+    #display sky surface on display surface
+    screen.blit(sky_surface, (0,0)) 
+    screen.blit(ground_surface, (0,300))
     
     # Updates the display window
     pygame.display.update()

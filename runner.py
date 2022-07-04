@@ -28,7 +28,8 @@ while True:
         if event.type == pygame.QUIT: #checks for exit button for window
             pygame.quit()
             exit() # exits while loop
-    
+        # if event.type == pygame.MOUSEMOTION:
+        #    if  player_rect.collidepoint(event.pos): print('collision')
     #display sky surface on display surface
     screen.blit(sky_surface, (0,0)) 
     screen.blit(ground_surface, (0,300))
@@ -38,6 +39,13 @@ while True:
         snail_rect.left = 800   
     screen.blit(snail_surface, snail_rect)
     screen.blit(player_surf, player_rect)
+    
+    #checks if there is a collision between two rects
+    # if player_rect.colliderect(snail_rect):
+    #     print('collision')
+    # mouse_pos = pygame.mouse.get_pos()
+    # if player_rect.collidepoint((mouse_pos)):
+    #    print(pygame.mouse.get_pressed())
     
     # Updates the display window
     pygame.display.update()

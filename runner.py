@@ -125,6 +125,9 @@ while True:
     else:
         screen.fill((94, 129, 162))
         screen.blit(player_stand, player_stand_rect)
+        obstacle_rect_list.clear()
+        player_rect.midbottom = (80,300)
+        player_gravity = 0
         screen.blit(game_name, game_name_rect)
         score_surf = test_font.render(f'Score: {score}', False, (111,196,169))
         score_rect = score_surf.get_rect(center = (400, 330))
